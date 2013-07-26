@@ -78,6 +78,8 @@
     textField.text = mutableString;
     [textField setValue:[NSValue valueWithRange:newRange] forKey:@"selectionRange"];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:UITextFieldTextDidChangeNotification object:self];
+    
     return NO;
 }
 
